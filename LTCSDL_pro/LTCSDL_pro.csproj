@@ -125,6 +125,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BUS\BookShopBUS.cs" />
+    <Compile Include="Models\Generated\Database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PetaPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +150,86 @@
     <Content Include="Asset\images\templatemo_image_03.jpg" />
     <Content Include="Asset\images\templatemo_image_04.jpg" />
     <Content Include="Asset\images\templatemo_menu_bg.jpg" />
+    <Content Include="Asset\img\0001.jpg" />
+    <Content Include="Asset\img\0002.jpg" />
+    <Content Include="Asset\img\0003.jpg" />
+    <Content Include="Asset\img\0004.jpg" />
+    <Content Include="Asset\img\0005.jpg" />
+    <Content Include="Asset\img\0006.jpg" />
+    <Content Include="Asset\img\0007.jpg" />
+    <Content Include="Asset\img\0008.jpg" />
+    <Content Include="Asset\img\0009.jpg" />
+    <Content Include="Asset\img\0010.jpg" />
+    <Content Include="Asset\img\0011.jpg" />
+    <Content Include="Asset\img\0012.jpg" />
+    <Content Include="Asset\img\0013.jpg" />
+    <Content Include="Asset\img\0014.jpg" />
+    <Content Include="Asset\img\0015.jpg" />
+    <Content Include="Asset\img\0016.jpg" />
+    <Content Include="Asset\img\0017.jpg" />
+    <Content Include="Asset\img\0018.jpg" />
+    <Content Include="Asset\img\0019.jpg" />
+    <Content Include="Asset\img\0020.jpg" />
+    <Content Include="Asset\img\0021.jpg" />
+    <Content Include="Asset\img\0022.jpg" />
+    <Content Include="Asset\img\0023.jpg" />
+    <Content Include="Asset\img\0024.jpg" />
+    <Content Include="Asset\img\0025.jpg" />
+    <Content Include="Asset\img\0026.jpg" />
+    <Content Include="Asset\img\0027.jpg" />
+    <Content Include="Asset\img\0028.jpg" />
+    <Content Include="Asset\img\0029.jpg" />
+    <Content Include="Asset\img\0030.jpg" />
+    <Content Include="Asset\img\0031.jpg" />
+    <Content Include="Asset\img\0032.jpg" />
+    <Content Include="Asset\img\0033.jpg" />
+    <Content Include="Asset\img\0034.jpg" />
+    <Content Include="Asset\img\0035.jpg" />
+    <Content Include="Asset\img\0036.jpg" />
+    <Content Include="Asset\img\0037.jpg" />
+    <Content Include="Asset\img\0038.jpg" />
+    <Content Include="Asset\img\0039.jpg" />
+    <Content Include="Asset\img\0040.jpg" />
+    <Content Include="Asset\img\0041.jpg" />
+    <Content Include="Asset\img\0042.jpg" />
+    <Content Include="Asset\img\0043.jpg" />
+    <Content Include="Asset\img\0044.jpg" />
+    <Content Include="Asset\img\0045.jpg" />
+    <Content Include="Asset\img\0046.jpg" />
+    <Content Include="Asset\img\0047.jpg" />
+    <Content Include="Asset\img\0048.jpg" />
+    <Content Include="Asset\img\0049.jpg" />
+    <Content Include="Asset\img\0050.jpg" />
+    <Content Include="Asset\img\0051.jpg" />
+    <Content Include="Asset\img\0052.jpg" />
+    <Content Include="Asset\img\0053.jpg" />
+    <Content Include="Asset\img\0054.jpg" />
+    <Content Include="Asset\img\0055.jpg" />
+    <Content Include="Asset\img\0056.jpg" />
+    <Content Include="Asset\img\0057.jpg" />
+    <Content Include="Asset\img\0058.jpg" />
+    <Content Include="Asset\img\0059.jpg" />
+    <Content Include="Asset\img\0060.jpg" />
+    <Content Include="Asset\img\0061.jpg" />
+    <Content Include="Asset\img\0062.jpg" />
+    <Content Include="Asset\img\0063.jpg" />
+    <Content Include="Asset\img\0064.jpg" />
+    <Content Include="Asset\img\0065.jpg" />
+    <Content Include="Asset\img\0066.jpg" />
+    <Content Include="Asset\img\0067.jpg" />
+    <Content Include="Asset\img\0068.jpg" />
+    <Content Include="Asset\img\0069.jpg" />
+    <Content Include="Asset\img\0070.jpg" />
+    <Content Include="Asset\img\0071.jpg" />
+    <Content Include="Asset\img\0072.jpg" />
+    <Content Include="Asset\img\0073.jpg" />
+    <Content Include="Asset\img\0074.jpg" />
+    <Content Include="Asset\img\0075.jpg" />
+    <Content Include="Asset\img\0076.jpg" />
+    <Content Include="Asset\img\0077.jpg" />
+    <Content Include="Asset\img\0078.jpg" />
+    <Content Include="Asset\img\0079.jpg" />
+    <Content Include="Asset\img\0080.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -151,8 +238,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Generated\Database.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Database.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
+    <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -184,7 +277,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -198,6 +290,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
