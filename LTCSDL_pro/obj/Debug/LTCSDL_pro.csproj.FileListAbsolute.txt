@@ -156,3 +156,7 @@ C:\Users\phung\Desktop\LTCSDL\LTCSDL_pro\obj\Debug\LTCSDL_pro.csproj.CoreCompile
 C:\Users\phung\Desktop\LTCSDL\LTCSDL_pro\obj\Debug\LTCSDL_pro.csproj.CopyComplete
 C:\Users\phung\Desktop\LTCSDL\LTCSDL_pro\obj\Debug\LTCSDL_pro.dll
 C:\Users\phung\Desktop\LTCSDL\LTCSDL_pro\obj\Debug\LTCSDL_pro.pdb
+C:\Users\phung\Desktop\LTCSDL\LTCSDL_pro\bin\EntityFramework.dll
+C:\Users\phung\Desktop\LTCSDL\LTCSDL_pro\bin\EntityFramework.SqlServer.dll
+C:\Users\phung\Desktop\LTCSDL\LTCSDL_pro\bin\EntityFramework.xml
+C:\Users\phung\Desktop\LTCSDL\LTCSDL_pro\bin\EntityFramework.SqlServer.xml
