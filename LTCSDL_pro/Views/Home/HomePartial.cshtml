@@ -1,0 +1,22 @@
+﻿<link href="~/Asset/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+@using LTCSDL_pro.Models;
+@model List<Sach>
+@{
+    foreach (var item in Model)
+    {
+
+        <div class="templatemo_product_box">
+            <h1>  @item.TenSach<span>(@item.TacGia.TenTacGia)</span></h1>
+            <img  style="height:120px; width:100px"  src="~/Asset/img/@item.AnhBia" alt="image" />
+            <div class="product_info">
+                <p></p>
+                <h3>Giá: @item.GiaBan VNĐ</h3>
+                <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
+                <div class="detail_button"><a href="/BookShop/Details/@item.MaSach">Detail</a></div>
+            </div>
+            <div class="cleaner">&nbsp;</div>
+        </div>
+    }
+
+}

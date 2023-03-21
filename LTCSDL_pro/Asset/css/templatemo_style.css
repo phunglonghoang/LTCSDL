@@ -241,6 +241,8 @@ img {
 	height: 210px;
 	padding: 10px;
 	border: 1px solid #333;
+	display: flex;
+	
 }
 
 #templatemo_content_right h1 {
@@ -285,6 +287,10 @@ img {
 	text-align: justify;
 	padding: 0 0 8px 0;
 }
+.templatemo_product_box{
+	width: 49%;
+	display: flex;
+}
 
 .templatemo_product_box h1 span {
 	font-weight: normal;
@@ -292,7 +298,8 @@ img {
 
 .templatemo_product_box img {
 	float: left;
-	margin-right: 20px;
+	margin-left: 20px;
+	
 }
 
 .templatemo_product_box .product_info {
