@@ -29,7 +29,7 @@ namespace LTCSDL_pro.Models
         public Nullable<int> SoLuongTon { get; set; }
         public Nullable<int> MaNXB { get; set; }
         public Nullable<int> MaChuDe { get; set; }
-        public Nullable<int> MaTG { get; set; }
+        public Nullable<int> MaTacGia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }

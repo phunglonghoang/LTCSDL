@@ -7,7 +7,7 @@
     foreach (var item in Model)
     {
         <ul>
-            <li><a href="subpage.html">@item.TenTacGia  </a></li>
+            <li><a href="/Home/TongTacGia?MaTacGia=@item.MaTacGia">@item.TenTacGia  </a></li>
         </ul>
     }
 }

@@ -129,8 +129,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookShopController.cs" />
+    <Compile Include="Controllers\ChuDeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\TacGiaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,18 +145,12 @@
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Generated\Database.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\KhachHang.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NhaXB.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PetaPoco.cs" />
     <Compile Include="Models\QLBS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,18 +169,17 @@
     <Compile Include="Models\Sach.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>QLBS.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TacGia.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\css\chiTiet.css" />
     <Content Include="Asset\css\demo.css" />
     <Content Include="Asset\css\Images\templatemo_header_bg.jpg" />
     <Content Include="Asset\css\templatemo_style.css" />
+    <Content Include="Asset\images\LOGO\Icon-Sach.jpg" />
     <Content Include="Asset\images\templatemo_ads.jpg" />
     <Content Include="Asset\images\templatemo_bg.jpg" />
     <Content Include="Asset\images\templatemo_btn_01.jpg" />
@@ -286,10 +281,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Generated\Database.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Database.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\QLBS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLBS.edmx</DependentUpon>
@@ -302,8 +293,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
-    <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
     <EntityDeploy Include="Models\QLBS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLBS.Designer.cs</LastGenOutput>
@@ -340,14 +329,18 @@
     <Content Include="Views\BookShop\Index.cshtml" />
     <Content Include="Views\BookShop\Details.cshtml" />
     <Content Include="Views\Home\SachMoiPartial.cshtml" />
-    <Content Include="Views\Home\DetailsPartial.cshtml" />
     <Content Include="Views\Home\HomePartial.cshtml" />
     <Content Include="Views\Home\Main1Partial.cshtml" />
     <Content Include="Views\Home\Main2Partial.cshtml" />
+    <Content Include="Views\Home\ChiTietSach.cshtml" />
+    <Content Include="Views\Home\SachChuDe.cshtml" />
+    <Content Include="Views\Home\TongTacGia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ChuDe\" />
     <Folder Include="Views\Login\" />
+    <Folder Include="Views\TacGia\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
