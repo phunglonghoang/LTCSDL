@@ -31,6 +31,7 @@ namespace LTCSDL_pro.Models
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<NhaXB> NhaXBs { get; set; }
         public virtual DbSet<Sach> Saches { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TacGia> TacGias { get; set; }
     }
 }

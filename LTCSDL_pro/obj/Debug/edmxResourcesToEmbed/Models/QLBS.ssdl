@@ -64,6 +64,16 @@
     <Property Name="MaChuDe" Type="int" />
     <Property Name="MaTacGia" Type="int" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="TacGia">
     <Key>
       <PropertyRef Name="MaTacGia" />
@@ -131,14 +141,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TacGia_Sach">
-    <End Role="Sach" Type="Self.Sach" Multiplicity="1" />
+  <Association Name="FK_Sach_TacGia">
     <End Role="TacGia" Type="Self.TacGia" Multiplicity="0..1" />
+    <End Role="Sach" Type="Self.Sach" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Sach">
-        <PropertyRef Name="MaSach" />
+      <Principal Role="TacGia">
+        <PropertyRef Name="MaTacGia" />
       </Principal>
-      <Dependent Role="TacGia">
+      <Dependent Role="Sach">
         <PropertyRef Name="MaTacGia" />
       </Dependent>
     </ReferentialConstraint>
@@ -150,6 +160,7 @@
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhaXB" EntityType="Self.NhaXB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sach" EntityType="Self.Sach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TacGia" EntityType="Self.TacGia" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ChiTietDonHang_DonHang" Association="Self.FK_ChiTietDonHang_DonHang">
       <End Role="DonHang" EntitySet="DonHang" />
@@ -171,9 +182,9 @@
       <End Role="NhaXB" EntitySet="NhaXB" />
       <End Role="Sach" EntitySet="Sach" />
     </AssociationSet>
-    <AssociationSet Name="FK_TacGia_Sach" Association="Self.FK_TacGia_Sach">
-      <End Role="Sach" EntitySet="Sach" />
+    <AssociationSet Name="FK_Sach_TacGia" Association="Self.FK_Sach_TacGia">
       <End Role="TacGia" EntitySet="TacGia" />
+      <End Role="Sach" EntitySet="Sach" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

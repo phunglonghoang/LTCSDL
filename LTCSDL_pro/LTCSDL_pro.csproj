@@ -169,6 +169,9 @@
     <Compile Include="Models\Sach.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>QLBS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TacGia.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
@@ -335,6 +338,7 @@
     <Content Include="Views\Home\ChiTietSach.cshtml" />
     <Content Include="Views\Home\SachChuDe.cshtml" />
     <Content Include="Views\Home\TongTacGia.cshtml" />
+    <Content Include="Views\Home\DetailsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

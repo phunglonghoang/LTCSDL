@@ -14,9 +14,16 @@ namespace LTCSDL_pro.Models
     
     public partial class TacGia
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TacGia()
+        {
+            this.Saches = new HashSet<Sach>();
+        }
+    
         public int MaTacGia { get; set; }
         public string TenTacGia { get; set; }
     
-        public virtual Sach Sach { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sach> Saches { get; set; }
     }
 }
