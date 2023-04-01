@@ -243,3 +243,7 @@ C:\Users\phung\Desktop\CSDL\LTCSDL\LTCSDL_pro\obj\Debug\LTCSDL_pro.csproj.CoreCo
 C:\Users\phung\Desktop\CSDL\LTCSDL\LTCSDL_pro\obj\Debug\LTCSDL_pro.csproj.CopyComplete
 C:\Users\phung\Desktop\CSDL\LTCSDL\LTCSDL_pro\obj\Debug\LTCSDL_pro.dll
 C:\Users\phung\Desktop\CSDL\LTCSDL\LTCSDL_pro\obj\Debug\LTCSDL_pro.pdb
+C:\Users\phung\Desktop\CSDL\LTCSDL\LTCSDL_pro\bin\PagedList.dll
+C:\Users\phung\Desktop\CSDL\LTCSDL\LTCSDL_pro\bin\PagedList.Mvc.dll
+C:\Users\phung\Desktop\CSDL\LTCSDL\LTCSDL_pro\bin\PagedList.xml
+C:\Users\phung\Desktop\CSDL\LTCSDL\LTCSDL_pro\bin\PagedList.Mvc.xml

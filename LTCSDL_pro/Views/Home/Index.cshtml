@@ -1,9 +1,14 @@
-﻿@{
+﻿<link  href="~/Asset/css/demo.css" rel="stylesheet" type="text/css"/>
+@using LTCSDL_pro.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Sach>
+@{
     ViewBag.Title = "Home Page";
 }
 <div id="templatemo_content_right">
-    @Html.Action("HomePartial","Home")
-    
+    @Html.Action("HomePartial", "Home")
+
 
     <a href="subpage.html"><img src="~/Asset/images/templatemo_ads.jpg" alt="ads" /></a>
+   
 </div> <!-- end of content right -->

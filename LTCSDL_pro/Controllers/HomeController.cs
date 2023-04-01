@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LTCSDL_pro.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace LTCSDL_pro.Controllers
 {
@@ -37,9 +39,14 @@ namespace LTCSDL_pro.Controllers
             return PartialView(lstDetails);
         }
 
-        public PartialViewResult HomePartial()
+        public PartialViewResult HomePartial( int? page )
         {
-            var lstHome = db.Saches.Take(6).ToList();
+            //tao bien 
+
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            var lstHome = db.Saches.ToList().OrderBy(n=>n.GiaBan).ToPagedList(pageNumber,pageSize);
             return PartialView(lstHome);
         }
         public PartialViewResult Main1Partial()

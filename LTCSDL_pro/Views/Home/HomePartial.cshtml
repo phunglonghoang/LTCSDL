@@ -1,16 +1,17 @@
 ﻿<link href="~/Asset/css/templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 @using LTCSDL_pro.Models;
-@model List<Sach>
+@using PagedList.Mvc;
+@model PagedList.PagedList<Sach>
 @{
     foreach (var item in Model)
     {
 
         <div class="templatemo_product_box">
             <h1>  @item.TenSach<span>(@item.TacGia.TenTacGia)</span></h1>
-            <img  style="height:120px; width:100px"  src="~/Asset/img/@item.AnhBia" alt="image" />
+            <img style="height:120px; width:100px" src="~/Asset/img/@item.AnhBia" alt="image" />
             <div class="product_info">
-                <h3>Giá: @item.GiaBan VNĐ</h3>  
+                <h3>Giá: @item.GiaBan VNĐ</h3>
                 <div class="buy_now_button"><a href="subpage.html">mua</a></div>
                 <div class="detail_button"><a href="/Home/ChiTietSach?MaSach=@item.MaSach">chi tiết</a></div>
                 <div class="detail_button"><a href="/BookShop/Details/@item.MaSach">thêm</a></div>
@@ -20,3 +21,18 @@
     }
 
 }
+@*Link Lieen ket*@
+<div class="tenTrang"> Trang @(Model.PageCount < Model.PageNumber ?0 : Model.PageNumber)/ @Model.PageCount</div>
+    
+<div class="PhanTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .PhanTrang li{
+        display:inline;
+        margin:20px;
+    }
+    .tenTrang{
+        text-align:center;
+    }
+</style>
