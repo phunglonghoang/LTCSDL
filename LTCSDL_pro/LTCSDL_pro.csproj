@@ -136,6 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookShopController.cs" />
     <Compile Include="Controllers\ChuDeController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TacGiaController.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\KhachHang.cs">
       <DependentUpon>QLBS.tt</DependentUpon>
     </Compile>
@@ -346,6 +348,7 @@
     <Content Include="Views\Home\SachChuDe.cshtml" />
     <Content Include="Views\Home\TongTacGia.cshtml" />
     <Content Include="Views\Home\DetailsPartial.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

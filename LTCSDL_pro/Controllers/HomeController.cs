@@ -64,6 +64,8 @@ namespace LTCSDL_pro.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
+            
+           
             //truy xuất danh sach theo chu de \
             List<Sach> lstsach = db.Saches.Where(n => n.MaChuDe == MaChuDe).OrderBy(n => n.GiaBan).ToList();
             if (lstsach.Count == 0)

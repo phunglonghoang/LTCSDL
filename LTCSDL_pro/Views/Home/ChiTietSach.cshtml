@@ -1,4 +1,7 @@
-﻿@using LTCSDL_pro.Models;
+﻿<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+@using LTCSDL_pro.Models;
 @model Sach
 @{
     ViewBag.Title = "ChiTietSach";
@@ -16,12 +19,17 @@
         <ul>
             <li>tác Giả: @Model.TacGia.TenTacGia </li>
             <li>Nhà xuất bản: @Model.NhaXB.TenNXB</li>
-            <li> <div class="buy_now_button"> <a href="subpage.html"> Mua Ngay</a></div></li>
+            @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaSach = Model.MaSach, @strURL = Request.Url.ToString() }))
+            {
+                <li> <input type="submit" value="Mua Hàng" id="btnMuaHang" /></li>
+                <li> <input type="submit" value="Thêm vào giỏ hàng" id="btnThemGioHang" /></li>
+            }
         </ul>
-        <h2>Mô tả sách</h2>
-        <ul>
+        
+        <div style="display: inline-block">
+            <h2>Mô tả sách</h2>
             @Model.MoTa
-        </ul>
+        </div>
 
         <p></p>
 
@@ -34,3 +42,17 @@
     
 
     </div> <!-- end of content right -->
+<style>
+    #btnMuaHang{
+        width:100px;
+        height: 30px;
+        background-color: white;
+        color:black;
+    }
+    #btnThemGioHang {
+        width: 150px;
+        height: 30px;
+        background-color: white;
+        color: black;
+    }
+</style>
