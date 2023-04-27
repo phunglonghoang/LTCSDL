@@ -1,0 +1,120 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+
+@model PagedList.PagedList<LTCSDL_pro.Models.Sach>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lý sản phẩm</h2>
+ 
+<p>
+    @Html.ActionLink("Thêm mới sách", "ThemMoi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TenSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().AnhBia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NgayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().SoLuongTon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaNXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaChuDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaTacGia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSach)
+        </td>
+        <td style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            @Html.DisplayFor(modelItem => item.TenSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.MoTa.)
+
+        </td>*@
+        <td>
+            <div style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </div>
+        </td>
+        <td>
+            <div id="AnhBia"><img src="@Url.Content("~/Asset/img/" +item.AnhBia)" width="100" height="100" /></div>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCapNhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhaXB.TenNXB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChuDe.TenChuDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TacGia.TenTacGia)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "ChinhSua", new { @MaSach = item.MaSach }) |
+            @Html.ActionLink("Hiển thị", "HienThi", new { @MaSach = item.MaSach }) |
+            @Html.ActionLink("Xóa", "Xoa", new { @MaSach = item.MaSach })
+        </td>
+    </tr>
+}
+
+</table>
+@*Tạo link liên kết các trang*@
+<div style="padding-left:47%">Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</div>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    
+</div>
+
+<style>
+    .MenuTrang li {
+    
+        display: inline-block;
+        padding-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+    }
+
+     .pagination-container{
+        padding-left:45%;
+    }
+    
+</style>

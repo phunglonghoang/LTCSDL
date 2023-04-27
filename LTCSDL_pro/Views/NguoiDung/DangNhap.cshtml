@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+
+    @using (Html.BeginForm())
+    {
+        
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h1>@ViewBag.ThongBao</h1>
+                    <h2>Đăng Nhập</h2>
+                    <div class="inputbox">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <input name="txtTaiKhoan" type="text" required />
+                        <label for="">Tài khoản</label>
+                    </div>
+                    <div class="inputbox">
+                        <span class="show-btn"><ion-icon name="eye-outline"></ion-icon></span>
+                        <input name="txtMatKhau" type="password" required />
+                        <label for="">Mật khẩu</label>
+                    </div>
+                    <button>Đăng nhập</button>
+                    <div class="register">
+                        <p>Chưa có tài khoản?<a href="DangKy"> Đăng ký.</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="~/Content/LoginJS/Login.js"></script>
+</section>
+
+

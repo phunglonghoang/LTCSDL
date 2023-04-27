@@ -12,8 +12,10 @@
     <meta name="keywords" content="web sach" />
     <meta name="description" content="" />
     <link href="~/Asset/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Asset/css/Login.css" rel="stylesheet" />
     <link href="~/Asset/css/demo.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link href="~/Content/FontAwesome/css/fontawesome.min.css" rel="stylesheet" />
 </head>
 <body>
     <!--  Free CSS Templates from www.templatemo.com -->
@@ -29,9 +31,20 @@
                 <li><button type="submit">tìm</button></li>
             </ul>
 
-            <ul class="login" >
-                <li><a href="#">Đăng nhập</a></li>
-                <li ><a href="#">Đăng kí </a></li>
+            <ul class="login">
+                @if (Session["TaiKhoan"] != null)
+                {
+                    //kh taiKhoan = (TaiKhoan)Session["TaiKhoan"];
+                    <text>Xin chào!</text>
+                    @Html.ActionLink("Đăng xuất", "DangNhap", "NguoiDung", null, htmlAttributes: new { @class = "DangNhap" }) // thêm nút đăng xuất
+                }
+                else
+                {
+                    @Html.ActionLink("Đăng ký", "DangKy", "NguoiDung", null, htmlAttributes: new { @class = "DangKy" })
+
+                    @Html.ActionLink("Đăng nhập", "DangNhap", "NguoiDung", null, htmlAttributes: new { @class = "DangNhap" })
+                }
+
             </ul>
             
         </div> <!-- end of menu -->

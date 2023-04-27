@@ -11,7 +11,7 @@ namespace LTCSDL_pro.Controllers
 {
     public class HomeController : Controller
     {
-        QuanLyBanSachEntities db = new QuanLyBanSachEntities();
+        QuanLyBanSachEntities2 db = new QuanLyBanSachEntities2();
         public ActionResult Index()
         {
             return View();
