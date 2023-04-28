@@ -12,10 +12,14 @@
             <h1>@item.TenSach  <span>(@item.TacGia.TenTacGia)</span></h1>
             <img  src="~/Asset/img/@item.AnhBia" style="height:120px; width:100px" alt="image" />
             <div class="product_info">
-                <h3>@item.GiaBan vnđ</h3>
+                <h3>@string.Format("{0:0,0}", item.GiaBan) vnđ</h3>
                 <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
                 <div class="detail_button"><a href="/Home/ChiTietSach?MaSach=@item.MaSach">Chi Tiết</a></div>
-                <div class=" them_button"><a href="#">thêm vào giỏ hàng</a></div>
+                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaSach = item.MaSach, @strURL = Request.Url.ToString() }))
+                {
+
+                    <div> <input type="submit" value="Thêm vào giỏ hàng" id="btnThemGioHang" /></div>
+                }
             </div>
              <div class="mota">
                  <h2>@item.MoTa 
@@ -26,4 +30,8 @@
         </div>
         <div class="cleaner_with_height">&nbsp;</div>
     }
-}
+}<style>
+    #btnThemGioHang {
+        cursor: pointer;
+    }
+</style>

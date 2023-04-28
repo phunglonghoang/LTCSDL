@@ -12,6 +12,7 @@ namespace LTCSDL_pro.Controllers
     public class GioHangController : Controller
     {
         QuanLyBanSachEntities db = new QuanLyBanSachEntities();
+        #region Giỏ Hàng
         //lấy giỏ hàng 
         public List<GioHang> LayGioHang()
         {
@@ -41,6 +42,8 @@ namespace LTCSDL_pro.Controllers
             if (sanPham == null)
             {
                 sanPham = new GioHang(iMaSach);
+                //add sp mới vào LIst
+                lstGioHang.Add(sanPham);
                 return Redirect(strURL);
             }
             else
@@ -68,7 +71,7 @@ namespace LTCSDL_pro.Controllers
                 sanPham.iSoLuong = int.Parse(f["txtSoLuong"].ToString());
 
             }
-            return View("GioHang");
+            return RedirectToAction("GioHang");
 
         }
         //xoa gio hang
@@ -106,6 +109,16 @@ namespace LTCSDL_pro.Controllers
 
         }
         //tinh so luong va gia
+        private int TongSoLuong()
+        {
+            int iTongSoLuong = 0;
+            List<GioHang> lstGioHang = Session["GioHang"] as List<GioHang>;
+            if (lstGioHang !=null)
+            {
+                iTongSoLuong =lstGioHang.Sum(n=>n.iSoLuong); 
+            } 
+            return iTongSoLuong;
+        }
         private double TongTien()
         {
             double dTongTien = 0;
@@ -116,8 +129,39 @@ namespace LTCSDL_pro.Controllers
             }
             return dTongTien;
         }
+        //tao partial Giỏ Hàng
+        public ActionResult GioHangPartial()
+        {
+            if (TongSoLuong() == 0)
+            {
+                return PartialView();
+            }
+            ViewBag.TongSoLuong = TongSoLuong();
+            ViewBag.TongTien=TongTien();
+            return PartialView();
+        }
+        //view user chỉnh sửa giỏ hàng
+        public ActionResult SuaGioHang()
+        {
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("index", "Home");
+            }
+            List<GioHang> lstGioHang = LayGioHang();
 
+            return View(lstGioHang);
+        }
+        #endregion
+        #region đạt hàng
+        [HttpPost]
+        public ActionResult DatHang()
+        {
+            //Kiểm Tra đăng nhập 
+
+            return View();
+        }
+        #endregion
     }
 
-    
+
 }

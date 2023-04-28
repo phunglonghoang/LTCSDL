@@ -13,8 +13,10 @@
     <meta name="description" content="" />
     <link href="~/Asset/css/templatemo_style.css" rel="stylesheet" type="text/css" />
     <link href="~/Asset/css/demo.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/font-awesome.min.css" />
+
 
 </head>
 <body>
@@ -25,7 +27,7 @@
             <ul>
                 <li><a href="/Home/Index" class="current">Trang Chủ</a></li>
                 <li><a href="/BookShop/Index">Sách mới</a></li>
-                <li><a href="#">Company</a></li>
+                
                 <li><a href="#">Contact</a></li>
                 <li><input type="text" placeholder="nhập sách cần tìm" /></li>
                 <li><button type="submit">tìm</button></li>
@@ -35,6 +37,7 @@
                 <li><a href="#">Đăng nhập</a></li>
                 <li ><a href="#">Đăng kí </a></li>
             </ul>
+            @Html.Action("GioHangPartial","GioHang")
             
         </div> <!-- end of menu -->
 

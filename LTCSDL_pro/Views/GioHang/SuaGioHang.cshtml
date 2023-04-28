@@ -1,11 +1,14 @@
 ﻿@using LTCSDL_pro.Models;
 @model List<GioHang>
 @{
-    ViewBag.Title = "GioHang";
+    ViewBag.Title = "Sửa Giỏ Hàng";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<h1>Giỏ Hàng</h1>
+<h2>SuaGioHang</h2>
+
+
+
 <table>
     <tr>
         <td class="bgc">Mã Sách</td>
@@ -33,53 +36,52 @@
             <td>
                 @string.Format("{0:0,0}", item.dDonGia) VNĐ
             </td>
+            @*chỉnh xửa đơn hàng*@
+            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMaSanPham = item.iMaSach }))
+            {
+                <td>
+                    @Html.TextBox("txtSoLuong", item.iSoLuong)
 
-            <td>
-                @item.iSoLuong
-            </td>
+                </td>
+           
+
+
 
             <td>
                 @string.Format("{0:0,0}", item.ThanhTien) VNĐ
             </td>
-
-
+            <td>
+                <input type="submit" value="Cập Nhật" />
+                <br />
+                @Html.ActionLink("Xóa", "XoaGioHang",  new { iMaSanPham = item.iMaSach })
+            </td>
+            
+                
+            }
+          
         </tr>
 
-
     }
-    <tr>
-        <td colspan="6" style="text-align:right">
-            @Html.ActionLink("sửa đơn hàng", "SuaGioHang")
-        </td>
-    </tr>
-   @* <tr>
-        <td colspan="6" style="text-align:right">
-            @using(Html.BeginForm("DatHang","GioHang")
-                {
-                <input type="submit" value="Đặt Hàng" />
-            }
-        </td>
-    </tr>*@
 
 
 </table>
 <style>
-    td>img {
+    td > img {
         width: 70px;
-        height:120px;
+        height: 120px;
     }
-    table{
+
+    table {
         border: 1px solid;
     }
-   
+
     td {
         margin: 5px;
-        padding:5px;
+        padding: 5px;
     }
-    td.bgc{
-        background-color:darkred;
-    }
+
+        td.bgc {
+            background-color: darkred;
+        }
 </style>
-
-
 

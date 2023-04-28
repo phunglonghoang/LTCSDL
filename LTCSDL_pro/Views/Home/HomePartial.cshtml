@@ -11,10 +11,15 @@
             <h1>  @item.TenSach<span>(@item.TacGia.TenTacGia)</span></h1>
             <img style="height:120px; width:100px" src="~/Asset/img/@item.AnhBia" alt="image" />
             <div class="product_info">
-                <h3>Giá: @item.GiaBan VNĐ</h3>
-                <div class="buy_now_button"><a href="subpage.html">mua</a></div>
+                <h3>Giá: @string.Format("{0:0,0}", item.GiaBan) VNĐ</h3>
+
+                <div class="buy_now_button"><a href="/GioHang/GioHang">mua</a></div>
                 <div class="detail_button"><a href="/Home/ChiTietSach?MaSach=@item.MaSach">chi tiết</a></div>
-                <div class="detail_button"><a href="/BookShop/Details/@item.MaSach">thêm vào giỏ hàng</a></div>
+                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaSach = item.MaSach, @strURL = Request.Url.ToString() }))
+                {
+
+                    <div> <input type="submit" value="Thêm vào giỏ hàng" id="btnThemGioHang" /></div>
+                }
             </div>
             <div class="cleaner">&nbsp;</div>
         </div>
@@ -34,5 +39,28 @@
     }
     .tenTrang{
         text-align:center;
+    }
+    #btnThemGioHang{
+        width:120px;
+        height:40px;
+    }
+    h1{
+        font-size:13px;
+
+    }
+    h3{
+        font-size:13px;
+    }
+    h1{
+        width:20%;
+    }
+    img{
+        
+    }
+    div.product_info{
+        width:35%;
+    }
+    div.templatemo_product_box{
+        margin:2px;
     }
 </style>
